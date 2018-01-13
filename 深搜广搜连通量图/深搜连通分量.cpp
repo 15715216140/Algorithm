@@ -3,7 +3,7 @@
 using namespace std;
 int map[100][100];
 bool vis [100][100];
-int count;
+int count, t = 0;
 int x[8] = {0,0,1,1,1,-1,-1,-1}, y[8] = {1,-1,-1,1,0,-1,1,0};
 char c;
 int dfs (int i, int j) {
@@ -18,7 +18,7 @@ int dfs (int i, int j) {
 }
 int main() {
 	freopen("test.txt","r",stdin);
-	int m, n, max = 0,t = 0;
+	int m, n, max = 0; 
 	while(cin >> m >> n) {
 		count = 0;
 		memset(map,0,sizeof(map));
