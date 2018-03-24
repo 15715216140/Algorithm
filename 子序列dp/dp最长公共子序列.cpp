@@ -11,7 +11,7 @@ int main() {
 	for(int i = 1; i <= l1; i++) {
 		for(int j = 1; j <= l2; j++) {
 			if(s1[i-1] == s2[j-1]) 	s[i][j] = s[i-1][j-1] + 1;
-			else 				s[i][j] = max(s[i-1][j],s[i][j-1]);
+			else 					s[i][j] = max(s[i-1][j],s[i][j-1]);
 			cout << s[i][j];
 		}
 		cout << endl;
