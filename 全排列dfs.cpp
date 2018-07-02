@@ -7,7 +7,7 @@ int ans = 0;
 int sum = 0; 
 int dfs(int step) {
 	int i;
-	if(step == 10) {//表示前9个已经放好了； 
+	if(step == 10) {
 		if(a[0]*100 + a[2]*10 +a[3]   +   a[4]*100 +a[5]*10 + a[6] 
 			== a[7]*100 + a[8]*10 + a[9]) 	{
 				

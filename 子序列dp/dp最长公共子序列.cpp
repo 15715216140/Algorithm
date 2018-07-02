@@ -1,4 +1,4 @@
-//ÊäÈëÁ½¸öÐòÁÐ²¢Çó×î³¤¹«¹²×ÓÐòÁÐ£¬²¢»ØËÝ¹ý³Ì 
+//è¾“å…¥ä¸¤ä¸ªåºåˆ—å¹¶æ±‚æœ€é•¿å…¬å…±å­åºåˆ—ï¼Œå¹¶å›žæº¯è¿‡ç¨‹ 
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -21,8 +21,8 @@ int main() {
 	int i = l1-1, j = l2-1;
 	while(i >=0 && j>=0) {
 		if(s1[i] == s2[j]) {
-			cout << s1[i] ;	//»ØËÝÊÇµ¹ÐòÊä³ö£¬ÎªÁËÇåÎú¾Íµ¹×ÅÊä³öÁË£¬
-								 	//Èç¹ûÐèÒªÕýÐò£¬you can add or change some code //can use a stack to make it
+			cout << s1[i] ;	//å›žæº¯æ˜¯å€’åºè¾“å‡ºï¼Œä¸ºäº†æ¸…æ™°å°±å€’ç€è¾“å‡ºäº†ï¼Œ
+								 	//å¦‚æžœéœ€è¦æ­£åºï¼Œyou can add or change some code //can use a stack to make it
 			i--;
 			j--;
 		}

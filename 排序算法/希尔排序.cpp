@@ -1,19 +1,19 @@
-#include <stdio.h>//Ï£¶ûÅÅĞò //ÌøÔ¾Ê½²åÈë£¬Ëã·¨²»ÎÈ¶¨ 
+#include <stdio.h>//å¸Œå°”æ’åº //è·³è·ƒå¼æ’å…¥ï¼Œç®—æ³•ä¸ç¨³å®š 
 #define N 10
 int main()
 {
 	int i,j,a[N+1];
 	for(i=1; i<=N; i++)
-		scanf("%d", &a[i]);//»ñÈ¡Êı¾İ 
-	int incre=N;//ÉèÖÃÔöÁ¿ 
+		scanf("%d", &a[i]);//è·å–æ•°æ® 
+	int incre=N;//è®¾ç½®å¢é‡ 
 	do
 	{
-	incre=incre/3+1; //ÔöÁ¿±ä»¯ 
+	incre=incre/3+1; //å¢é‡å˜åŒ– 
 	for(i=incre+1; i<=N; i++)
 		{
-			if(a[i-incre] > a[i]) //¶Ô²åÈëÅÅĞòµÄ¸Ä½ø£¬ÏÈ×öµ½»ù±¾ÓĞĞò 
+			if(a[i-incre] > a[i]) //å¯¹æ’å…¥æ’åºçš„æ”¹è¿›ï¼Œå…ˆåšåˆ°åŸºæœ¬æœ‰åº 
 			 {
-			 	a[0]=a[i]; //a[0]ÉÚ±ø 
+			 	a[0]=a[i]; //a[0]å“¨å…µ 
 			 	for(j=i-incre; a[j]>a[0]; j-=incre) 
 					a[j+incre]=a[j];
 				a[j+incre]=a[0]; 

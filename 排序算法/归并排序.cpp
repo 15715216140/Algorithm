@@ -1,4 +1,4 @@
-#include <stdio.h>//¶ÑÅÅĞò 
+#include <stdio.h>//å †æ’åº 
 #define N 10
 int msortf(int a[]);
 int msort(int a[], int a1[], int s, int t);
@@ -42,7 +42,7 @@ int msort(int a[], int a1[], int s, int t)
 		m = (s + t) / 2;
 		msort(a,a2,s,m);
 		msort(a,a2,m+1,t);
-		msortcore(a2,a1,s,m,t);			//Á½¸ö×ÓĞòÁĞºÏ²¢º¯Êı 
+		msortcore(a2,a1,s,m,t);			//ä¸¤ä¸ªå­åºåˆ—åˆå¹¶å‡½æ•° 
 	}
 }
 

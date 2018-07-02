@@ -1,25 +1,25 @@
 #include <stdio.h>
 #define N 10
-int Qsort(int a[], int low, int high) ;//¿ìÅÅ 
-int pivotfx(int a[], int low, int high);//¿ìÅÅºËĞÄº¯Êı  
-int insert(int a[], int low, int high) ;	//²åÈëÅÅĞò 
+int Qsort(int a[], int low, int high) ;//å¿«æ’ 
+int pivotfx(int a[], int low, int high);//å¿«æ’æ ¸å¿ƒå‡½æ•°  
+int insert(int a[], int low, int high) ;	//æ’å…¥æ’åº 
 int main()
 {
 	int i,j; 
 	int a[N+1];
 	for(i=1;i<=10;i++)
 	scanf("%d",&a[i]);
-	int low = 1, high = sizeof(a)/4 - 1;//Êı×éÆğÊ¼½áÊø£¬a[0] ÓÃ×÷½»»»ÓÃ ±ê±ø 
+	int low = 1, high = sizeof(a)/4 - 1;//æ•°ç»„èµ·å§‹ç»“æŸï¼Œa[0] ç”¨ä½œäº¤æ¢ç”¨ æ ‡å…µ 
 	Qsort(a,low,high);
 	for(i=1;i<=10;i++)
 	printf("%d  ",a[i]);
 	
 } 
- int Qsort(int a[], int low, int high) 					//¿ìÅÅµİ¹éº¯Êı 
+ int Qsort(int a[], int low, int high) 					//å¿«æ’é€’å½’å‡½æ•° 
  {
  	int pivot;
  	
- 	if(high - low > 7)								//Êı¶àÓÃ¿ìÅÅ£¬ÊıÉÙ¸ÄÎª²åÈëÅÅĞò 
+ 	if(high - low > 7)								//æ•°å¤šç”¨å¿«æ’ï¼Œæ•°å°‘æ”¹ä¸ºæ’å…¥æ’åº 
  	{
 	while (low < high)
 		 {
@@ -31,7 +31,7 @@ int main()
  	else
  	insert(a,low,high);
  }
- int pivotfx(int a[], int low, int high)				//±ê³ßºËĞÄº¯Êı 
+ int pivotfx(int a[], int low, int high)				//æ ‡å°ºæ ¸å¿ƒå‡½æ•° 
  {
  	int pivotkey;
  	{
@@ -43,31 +43,31 @@ int main()
 		if(a[m] > a[high])
 		a[0] = a[m]; a[m] = a[low]; a[low] = a[0] ;
  		
-	 }				//ÈıÊıÈ¡ÖĞ£¬ÓÅ»¯±ê³ß £¨¿ìÅÅµÄÓÅ»¯£© 
-	pivotkey = a[low];//±ê³ß 
+	 }				//ä¸‰æ•°å–ä¸­ï¼Œä¼˜åŒ–æ ‡å°º ï¼ˆå¿«æ’çš„ä¼˜åŒ–ï¼‰ 
+	pivotkey = a[low];//æ ‡å°º 
  	while(low < high)
  	{
  		while(low < high && a[high] >= pivotkey) 		// 
- 		high--;											// ´ÓºóÃæÕÒ£¨Ã¿²éÕÒÒ»´Î£¬high-±ê¼ÇÒ»ÏÂ£©Ö±µ½·¢ÏÖ±È±ê³ßĞ¡µÄÊı
- 		a[0] = a[high]; a[high] = a[low]; a[low] = a[0] ;//½»»»µ½Ç°Ãæ 
- 		while(low < high && a[low] <= pivotkey) 		//,½»»»¹ıÖ®ºó£¬±ê³ß¼ÌĞøÓëÇ°Ãæ±È½Ï£¬low++±ê¼Ç£¬Ö±µ½·¢ÏÖ±È±ê³ß´ó£¬½»»» 
+ 		high--;											// ä»åé¢æ‰¾ï¼ˆæ¯æŸ¥æ‰¾ä¸€æ¬¡ï¼Œhigh-æ ‡è®°ä¸€ä¸‹ï¼‰ç›´åˆ°å‘ç°æ¯”æ ‡å°ºå°çš„æ•°
+ 		a[0] = a[high]; a[high] = a[low]; a[low] = a[0] ;//äº¤æ¢åˆ°å‰é¢ 
+ 		while(low < high && a[low] <= pivotkey) 		//,äº¤æ¢è¿‡ä¹‹åï¼Œæ ‡å°ºç»§ç»­ä¸å‰é¢æ¯”è¾ƒï¼Œlow++æ ‡è®°ï¼Œç›´åˆ°å‘ç°æ¯”æ ‡å°ºå¤§ï¼Œäº¤æ¢ 
  		low++;
  		a[0] = a[high]; a[high] = a[low]; a[low] = a[0]; 
  		
 	 }
-	 return low; 										//×îºó·µ»Ø±ê³ßµÄÎ»ÖÃ 
+	 return low; 										//æœ€åè¿”å›æ ‡å°ºçš„ä½ç½® 
  }
  int insert(int a[], int low, int high) 
  {
  	int aa,i,j;
  		for(i=low + 1;i<=high;i++)
 		{
-			if(a[i]<a[i-1]) //Èç¹û´ø²åÈëµÄÊı½Ï´ó£¬ĞèÒªÏòÇ°²åÈë 
+			if(a[i]<a[i-1]) //å¦‚æœå¸¦æ’å…¥çš„æ•°è¾ƒå¤§ï¼Œéœ€è¦å‘å‰æ’å…¥ 
 				{
-					aa=a[i]; //ÉÚ±ø 
-					for(j = i-1;a[j]>a[0];j--) // ÓëÇ°Ò»¸ö±È½Ï£¬Èç¹ûÇ°Ò»¸ö½Ï´ó
-					a[j+1] = a[j];  //ÔòºóÒÆÒ»Î»,Áô³ö¿Õ´ı²å 
-					a[j+1]=aa;  //Ö±µ½¿ÕÂú×ã²åÈëÒªÇó 
+					aa=a[i]; //å“¨å…µ 
+					for(j = i-1;a[j]>a[0];j--) // ä¸å‰ä¸€ä¸ªæ¯”è¾ƒï¼Œå¦‚æœå‰ä¸€ä¸ªè¾ƒå¤§
+					a[j+1] = a[j];  //åˆ™åç§»ä¸€ä½,ç•™å‡ºç©ºå¾…æ’ 
+					a[j+1]=aa;  //ç›´åˆ°ç©ºæ»¡è¶³æ’å…¥è¦æ±‚ 
 				}
 		}
  }

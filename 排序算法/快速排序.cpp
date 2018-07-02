@@ -3,25 +3,25 @@
 #include <algorithm> 
 #define N 10
 int Qsort(int a[], in
- low, int high) ;//¿ìÅÅ 
-int pivotfx(int a[], int low, int high);//¿ìÅÅºËĞÄº¯Êı  
+ low, int high) ;//å¿«æ’ 
+int pivotfx(int a[], int low, int high);//å¿«æ’æ ¸å¿ƒå‡½æ•°  
 int main()
 {
 	int i,j; 
 	int a[N+1];
 	for(i=1;i<=10;i++)
 	scanf("%d",&a[i]);
-	int low = 1, high = sizeof(a)/4 - 1;//Êı×éÆğÊ¼½áÊø£¬a[0] ÓÃ×÷½»»»ÓÃ ±ê±ø 
+	int low = 1, high = sizeof(a)/4 - 1;//æ•°ç»„èµ·å§‹ç»“æŸï¼Œa[0] ç”¨ä½œäº¤æ¢ç”¨ æ ‡å…µ 
 	Qsort(a,low,high);
 	for(i=1;i<=10;i++)
 	printf("%d  ",a[i]);
 	
 } 
- int Qsort(int a[], int low, int high) 					//¿ìÅÅµİ¹éº¯Êı 
+ int Qsort(int a[], int low, int high) 					//å¿«æ’é€’å½’å‡½æ•° 
  {
  	int pivot;
  	
- 	if(low < high)//Ö±µ½Ã¿¸ö×ÓĞòÁĞ½öÎªÒ»¸öÊı 
+ 	if(low < high)//ç›´åˆ°æ¯ä¸ªå­åºåˆ—ä»…ä¸ºä¸€ä¸ªæ•° 
  	{
  		pivot = pivotfx(a,low,high);
  		Qsort(a, pivot + 1, high);
@@ -29,19 +29,19 @@ int main()
  	
 	 }
  }
- int pivotfx(int a[], int low, int high)				//±ê³ßºËĞÄº¯Êı 
+ int pivotfx(int a[], int low, int high)				//æ ‡å°ºæ ¸å¿ƒå‡½æ•° 
  {
  	int pivotkey;
-	pivotkey = a[low];//±ê³ß 
+	pivotkey = a[low];//æ ‡å°º 
  	while(low < high)
  	{
  		while(low < high && a[high] >= pivotkey) 		// 
- 		high--;											// ´ÓºóÃæÕÒ£¨Ã¿²éÕÒÒ»´Î£¬high-±ê¼ÇÒ»ÏÂ£©Ö±µ½·¢ÏÖ±È±ê³ßĞ¡µÄÊı
-		swap(a[high] , a[low]) ;//½»»»µ½Ç°Ãæ 
- 		while(low < high && a[low] <= pivotkey) 		//,½»»»¹ıÖ®ºó£¬±ê³ß¼ÌĞøÓëÇ°Ãæ±È½Ï£¬low++±ê¼Ç£¬Ö±µ½·¢ÏÖ±È±ê³ß´ó£¬½»»» 
+ 		high--;											// ä»åé¢æ‰¾ï¼ˆæ¯æŸ¥æ‰¾ä¸€æ¬¡ï¼Œhigh-æ ‡è®°ä¸€ä¸‹ï¼‰ç›´åˆ°å‘ç°æ¯”æ ‡å°ºå°çš„æ•°
+		swap(a[high] , a[low]) ;//äº¤æ¢åˆ°å‰é¢ 
+ 		while(low < high && a[low] <= pivotkey) 		//,äº¤æ¢è¿‡ä¹‹åï¼Œæ ‡å°ºç»§ç»­ä¸å‰é¢æ¯”è¾ƒï¼Œlow++æ ‡è®°ï¼Œç›´åˆ°å‘ç°æ¯”æ ‡å°ºå¤§ï¼Œäº¤æ¢ 
  		low++;
- 		swap(a[high] , a[low]) ;//½»»»µ½Ç°Ãæ ; 
+ 		swap(a[high] , a[low]) ;//äº¤æ¢åˆ°å‰é¢ ; 
  		
 	 }
-	 return low; 										//×îºó·µ»Ø±ê³ßµÄÎ»ÖÃ 
+	 return low; 										//æœ€åè¿”å›æ ‡å°ºçš„ä½ç½® 
  }
