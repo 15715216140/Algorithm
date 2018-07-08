@@ -12,7 +12,7 @@ long long fastPower(long long a, long long b, long long m){
     while(b > 0) {
         if(b % 2 )   ans = ans * a % m;  // b & 1 == b % 2
         a  = a * a % m;
-        b /= 1;                        // b /= 2 == b >>= 1
+        b /= 2;                        // b /= 2 == b >>= 1
     }
     return ans;
 }
